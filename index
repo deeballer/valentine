@@ -49,6 +49,7 @@
         <h2 id="subheading">Please don't say no </h2>
         <button class="btn yes" id="yes-btn" onclick="accept()">Yes </button>
         <button class="btn no" id="no-btn" onclick="reject()">No! </button>
+        <h3 id="message"></h3> <!-- Add this line -->
     </div>
     
     <script>
