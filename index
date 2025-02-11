@@ -55,19 +55,19 @@
     <script>
         let noClicks = 0;
         const messages = [
-    "Don't leave me hanging", 
-    "You will enjoy it o 🥲", 
-    "Come on na! ", 
-    "Just give me a chance", 
-    "Give me a second thought", 
-    "A third thought? 😤", 
-    "Just be mine baby! ", 
-    "I am begging you", 
-    "Saying yes will make my day! 🎉", 
-    "One yes can change everything! 💖", 
-    "Just click yes already! ", 
-    "You know you want to! 😉"
-];
+            "Don't leave me hanging", 
+            "You will enjoy it o 🥲", 
+            "Come on na! ", 
+            "Just give me a chance", 
+            "Give me a second thought", 
+            "A third thought? 😤", 
+            "Just be mine baby! ", 
+            "I am begging you", 
+            "Saying yes will make my day! 🎉", 
+            "One yes can change everything! 💖", 
+            "Just click yes already! ", 
+            "You know you want to! 😉"
+        ];
         
         function accept() {
             // Show a thank you message instead of redirecting
