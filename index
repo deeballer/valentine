@@ -70,7 +70,10 @@
 ];
         
         function accept() {
-            window.location.href = "yes.html";
+            // Show a thank you message instead of redirecting
+            document.getElementById("subheading").innerText = "Thank you for saying Yes! 💖";
+            document.getElementById("yes-btn").style.display = "none";
+            document.getElementById("no-btn").style.display = "none";
         }
         
         function reject() {
