@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffccd5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #d6336c;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .yes {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+        }
+        .no {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine Marvis? 💖</h1>
+        <h2 id="subheading">Please don't say no </h2>
+        <button class="btn yes" id="yes-btn" onclick="accept()">Yes </button>
+        <button class="btn no" id="no-btn" onclick="reject()">No! </button>
+    </div>
+    
+    <script>
+        let noClicks = 0;
+        const messages = [
+    "Don't leave me hanging", 
+    "You will enjoy it o 🥲", 
+    "Come on na! ", 
+    "Just give me a chance", 
+    "Give me a second thought", 
+    "A third thought? 😤", 
+    "Just be mine baby! ", 
+    "I am begging you", 
+    "Saying yes will make my day! 🎉", 
+    "One yes can change everything! 💖", 
+    "Just click yes already! ", 
+    "You know you want to! 😉"
+];
+        
+        function accept() {
+            window.location.href = "yes.html";
+        }
+        
+        function reject() {
+            function swapButtons() {
+                const yesButton = document.getElementById("yes-btn");
+                const noButton = document.getElementById("no-btn");
+                const yesClone = yesButton.cloneNode(true);
+                const noClone = noButton.cloneNode(true);
+                
+                yesButton.replaceWith(noClone);
+                noButton.replaceWith(yesClone);
+                
+                yesClone.addEventListener("click", accept);
+                noClone.addEventListener("click", reject);
+            }
+            noClicks++;
+            const yesButton = document.getElementById("yes-btn");
+            const messageElement = document.getElementById("message");
+            
+            if (noClicks < 15) {
+                if ([3, 6, 7, 8, 10].includes(noClicks)) {
+                    swapButtons();
+                }
+                let newSize = 18 + noClicks * 10;
+                yesButton.style.fontSize = `${newSize}px`;
+                document.getElementById("subheading").innerText = messages[noClicks % messages.length];
+            } else {
+                document.getElementById("no-btn").style.display = "none";
+                messageElement.innerText = "Looks like Yes is the only option now! 🙃";
+            }
+        }
+    </script>
+</body>
+</html>
